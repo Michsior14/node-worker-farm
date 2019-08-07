@@ -1,4 +1,4 @@
-import { ForkOptions, ChildProcess } from "child_process";
+import { ChildProcess, ForkOptions } from "child_process";
 
 export = Farm;
 
@@ -8,7 +8,7 @@ declare function Farm(options: Farm.FarmOptions, name: string): Farm.Workers;
 declare function Farm(
   options: Farm.FarmOptions,
   name: string,
-  exportedMethods: string[],
+  exportedMethods: string[]
 ): Farm.Workers;
 
 type WorkerCallback0 = () => void;
@@ -18,11 +18,14 @@ type WorkerCallback3 = (arg1: any, arg2: any, arg3: any) => void;
 type WorkerCallback4 = (arg1: any, arg2: any, arg3: any, arg4: any) => void;
 
 declare namespace Farm {
-  export function end(workers: Workers, callback?: Function): void;
-  export function kill(workers: Workers, callback?: Function): void;
+  export function end(
+    workers: Workers,
+    force?: boolean,
+    callback?: Function
+  ): void;
 
   export interface Workers {
-    [x: string]: Workers,
+    [x: string]: Workers;
     (callback: WorkerCallback): void;
     (arg1: any, callback: WorkerCallback): void;
     (arg1: any, arg2: any, callback: WorkerCallback): void;
@@ -32,7 +35,7 @@ declare namespace Farm {
       arg2: any,
       arg3: any,
       arg4: any,
-      callback: WorkerCallback,
+      callback: WorkerCallback
     ): void;
   }
 
