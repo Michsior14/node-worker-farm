@@ -1,4 +1,4 @@
-import { ForkOptions } from "child_process";
+import { ForkOptions, ChildProcess } from "child_process";
 
 export = Farm;
 
@@ -19,6 +19,7 @@ type WorkerCallback4 = (arg1: any, arg2: any, arg3: any, arg4: any) => void;
 
 declare namespace Farm {
   export function end(workers: Workers, callback?: Function): void;
+  export function kill(workers: Workers, callback?: Function): void;
 
   export interface Workers {
     [x: string]: Workers,
@@ -44,6 +45,7 @@ declare namespace Farm {
     maxRetries?: number;
     autoStart?: boolean;
     workerOptions?: ForkOptions;
+    onChild?: (child: ChildProcess) => void;
   }
 
   export type WorkerCallback =
