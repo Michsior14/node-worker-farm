@@ -1,8 +1,8 @@
 {
-  "name": "worker-farm",
+  "name": "worker-farm-enhanced",
   "description": "Distribute processing tasks to child processes with an über-simple API and baked-in durability & custom concurrency options.",
-  "version": "1.8.0",
-  "homepage": "https://github.com/rvagg/node-worker-farm",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Michsior14/node-worker-farm",
   "authors": [
     "Rod Vagg @rvagg <rod@vagg.org> (https://github.com/rvagg)"
   ],
@@ -15,7 +15,7 @@
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rvagg/node-worker-farm.git"
+    "url": "https://github.com/Michsior14/node-worker-farm.git"
   },
   "dependencies": {
     "errno": "~0.1.7"
